@@ -35,6 +35,21 @@ class M_kuisioner extends CI_Model
         return null;
     }
 
+    public function cek($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_result a');
+        $this->db->where('a.user_id', $id);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return null;
+    }
+
     public function method_ipa($category)
     {
         $query = $this->db->query("SELECT (SELECT COUNT(answer_id) FROM `tbl_answer` WHERE `tbl_answer`.`id_kuisioner`= `tbl_kuisioner`.`id_kuisioner` AND `tbl_answer`.`answer_value`='STP') as total_stp,
@@ -147,6 +162,16 @@ class M_kuisioner extends CI_Model
         $this->db->insert('tbl_answer', $data);
     }
 
+
+    public function create_result($datax)
+    {
+        $this->db->insert('tbl_result', $datax);
+    }
+    public function update_result($datax)
+    {
+        $this->db->update('tbl_result', $datax, array('user_id' => $datax['user_id']));
+    }
+
     public function create($data)
     {
         $this->db->insert('tbl_kuisioner', $data);
@@ -160,6 +185,11 @@ class M_kuisioner extends CI_Model
     public function delete($id)
     {
         $this->db->delete('tbl_kuisioner', array('id_kuisioner' => $id));
+    }
+
+    public function delete_result($id)
+    {
+        $this->db->delete('tbl_result', array('user_id' => $id));
     }
 
     public function get($id)

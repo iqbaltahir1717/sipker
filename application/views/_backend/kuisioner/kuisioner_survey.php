@@ -60,23 +60,23 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <input value="SP" name="tangible<?php echo $non ?>[]" type="radio">
+                                                            <input required value="SP" name="tangible<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="P" name="tangible<?php echo $non ?>[]" type="radio">
+                                                            <input required value="P" name="tangible<?php echo $non ?>[]" type="radio">
                                                             <label for="">Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="C" name="tangible<?php echo $non ?>[]" type="radio">
+                                                            <input required value="C" name="tangible<?php echo $non ?>[]" type="radio">
                                                             <label for="">Cukup</label>
                                                         </td>
                                                         <td>
-                                                            <input value="TP" name="tangible<?php echo $non ?>[]" type="radio">
+                                                            <input required value="TP" name="tangible<?php echo $non ?>[]" type="radio">
                                                             <label for="">Tidak Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="STP" name="tangible<?php echo $non ?>[]" type="radio">
+                                                            <input required value="STP" name="tangible<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Tidak Puas</label>
                                                         </td>
                                                         <input type="hidden" name="id_kuisioner[]" value="<?php echo $key->id_kuisioner ?>">
@@ -112,23 +112,23 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <input value="SP" name="reliability<?php echo $non ?>[]" type="radio">
+                                                            <input required value="SP" name="reliability<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="P" name="reliability<?php echo $non ?>[]" type="radio">
+                                                            <input required value="P" name="reliability<?php echo $non ?>[]" type="radio">
                                                             <label for="">Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="C" name="reliability<?php echo $non ?>[]" type="radio">
+                                                            <input required value="C" name="reliability<?php echo $non ?>[]" type="radio">
                                                             <label for="">Cukup</label>
                                                         </td>
                                                         <td>
-                                                            <input value="TP" name="reliability<?php echo $non ?>[]" type="radio">
+                                                            <input required value="TP" name="reliability<?php echo $non ?>[]" type="radio">
                                                             <label for="">Tidak Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="STP" name="reliability<?php echo $non ?>[]" type="radio">
+                                                            <input required value="STP" name="reliability<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Tidak Puas</label>
                                                         </td>
                                                         <input type="hidden" name="id_kuisioner2[]" value="<?php echo $key->id_kuisioner ?>">
@@ -165,23 +165,23 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <input value="SP" name="responsiveness<?php echo $non ?>[]" type="radio">
+                                                            <input required value="SP" name="responsiveness<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="P" name="responsiveness<?php echo $non ?>[]" type="radio">
+                                                            <input required value="P" name="responsiveness<?php echo $non ?>[]" type="radio">
                                                             <label for="">Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="C" name="responsiveness<?php echo $non ?>[]" type="radio">
+                                                            <input required value="C" name="responsiveness<?php echo $non ?>[]" type="radio">
                                                             <label for="">Cukup</label>
                                                         </td>
                                                         <td>
-                                                            <input value="TP" name="responsiveness<?php echo $non ?>[]" type="radio">
+                                                            <input required value="TP" name="responsiveness<?php echo $non ?>[]" type="radio">
                                                             <label for="">Tidak Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="STP" name="responsiveness<?php echo $non ?>[]" type="radio">
+                                                            <input required value="STP" name="responsiveness<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Tidak Puas</label>
                                                         </td>
                                                         <input type="hidden" name="id_kuisioner3[]" value="<?php echo $key->id_kuisioner ?>">
@@ -219,23 +219,23 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <input value="SP" name="assurance<?php echo $non ?>[]" type="radio">
+                                                            <input required value="SP" name="assurance<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="P" name="assurance<?php echo $non ?>[]" type="radio">
+                                                            <input required value="P" name="assurance<?php echo $non ?>[]" type="radio">
                                                             <label for="">Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="C" name="assurance<?php echo $non ?>[]" type="radio">
+                                                            <input required value="C" name="assurance<?php echo $non ?>[]" type="radio">
                                                             <label for="">Cukup</label>
                                                         </td>
                                                         <td>
-                                                            <input value="TP" name="assurance<?php echo $non ?>[]" type="radio">
+                                                            <input required value="TP" name="assurance<?php echo $non ?>[]" type="radio">
                                                             <label for="">Tidak Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="STP" name="assurance<?php echo $non ?>[]" type="radio">
+                                                            <input required value="STP" name="assurance<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Tidak Puas</label>
                                                         </td>
                                                         <input type="hidden" name="id_kuisioner4[]" value="<?php echo $key->id_kuisioner ?>">
@@ -273,23 +273,23 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <input value="SP" name="empathy<?php echo $non ?>[]" type="radio">
+                                                            <input required value="SP" name="empathy<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="P" name="empathy<?php echo $non ?>[]" type="radio">
+                                                            <input required value="P" name="empathy<?php echo $non ?>[]" type="radio">
                                                             <label for="">Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="C" name="empathy<?php echo $non ?>[]" type="radio">
+                                                            <input required value="C" name="empathy<?php echo $non ?>[]" type="radio">
                                                             <label for="">Cukup</label>
                                                         </td>
                                                         <td>
-                                                            <input value="TP" name="empathy<?php echo $non ?>[]" type="radio">
+                                                            <input required value="TP" name="empathy<?php echo $non ?>[]" type="radio">
                                                             <label for="">Tidak Puas</label>
                                                         </td>
                                                         <td>
-                                                            <input value="STP" name="empathy<?php echo $non ?>[]" type="radio">
+                                                            <input required value="STP" name="empathy<?php echo $non ?>[]" type="radio">
                                                             <label for="">Sangat Tidak Puas</label>
                                                         </td>
                                                         <input type="hidden" name="id_kuisioner5[]" value="<?php echo $key->id_kuisioner ?>">

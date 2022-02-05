@@ -45,21 +45,10 @@
                                             ?>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li class="user-header">
-                                                <?php
-                                                if ($this->session->userdata('user_photo') == "") {
-                                                    echo '<img src="' . base_url() . 'upload/user/noimage.png" class="img-circle" alt="User Image">';
-                                                } else {
-                                                    echo '<img src="' . base_url() . 'upload/user/' . $this->session->userdata('user_photo') . '" class="img-circle" alt="User Image">';
-                                                }
-                                                ?>
-                                                <p>
-                                                    <?php echo $this->session->userdata('user_fullname'); ?>
-                                                    <small>Member since<br><?php echo $this->session->userdata('user_createtime'); ?></small>
-                                                </p>
+                                            <li class="user-header" style="height: 0 !important;">
                                             </li>
 
-                                            <li class="user-footer">
+                                            <li class="user-footer" style="background: #fff;">
                                                 <div class="pull-left">
                                                     <a href="<?php echo site_url('mahasiswa/kuisioner/profile') ?>" class="btn btn-default btn-flat">Profile</a>
                                                 </div>
@@ -90,7 +79,7 @@
                         </div>
                     </div>
                     <br>
-                    <div class="main-box">
+                    <!-- <div class="main-box">
                         <div class="boxes box1 col-lg-4">
                             <h2>2</h2>
                             <p>Total Jumlah Survey</p>
@@ -99,7 +88,7 @@
                             <h2>2</h2>
                             <p>Jumlah Survey Diisi</p>
                         </div>
-                    </div>
+                    </div> -->
                     <br><br>
                     <div class="box-body">
                         <?php
@@ -112,42 +101,32 @@
                             echo "Kata Kunci Pencarian : <span class='label label-danger label-inline font-weight-lighter mr-2'>" . $search . "</span><hr style='border: 0.5px solid #d2d6de'>";
                         }
                         ?>
-                        <div class="div">
+                        <!-- <div class="div">
                             <button>Cek Hasil Survey Keseluruhan</button>
+                        </div> -->
+                        <br><br>
+                        <div class="div-content div">
+
+                            <h4>Isi Survey "EVALUASI KEPUASAN MAHASISWA TERHADAP FASILITAS DAN DOSEN FAKULTAS TEKNIK"</h4>
+                            <?php if (
+                                $cek[0]->result_1 == 1
+                            ) { ?>
+                                <a class="disable">Selesai</a>
+                            <?php } else { ?>
+                                <a href="<?php echo site_url('mahasiswa/kuisioner/kuisioner_kepuasan/') ?>">Isi Survey</a>
+                            <?php } ?>
                         </div>
-                        <br>
-                        <table class="table table-hover">
-                            <tr>
-                                <td width="80%">Isi Survey "EVALUASI KEPUASAN MAHASISWA TERHADAP FASILITAS DAN DOSEN FAKULTAS TEKNIK"</td>
-                                <?php if ($cek = $this->session->userdata('user_id')) { ?>
-                                    <!-- <td style="text-align: right; color:#1F1F1F">
-                                        <p href="" style="color:#1F1F1F; text-decoration: underline;">Selesai</p>
-                                    </td> -->
-                                    <td style="text-align: right; color:#1F1F1F">
-                                        <a href="<?php echo site_url('mahasiswa/kuisioner/kuisioner_kepuasan/') ?>" style="color:#1F1F1F; text-decoration: underline;">Isi Survey</a>
-                                    </td>
-                                <?php } else { ?>
-                                    <td style="text-align: right; color:#1F1F1F">
-                                        <a href="<?php echo site_url('mahasiswa/kuisioner/kuisioner_kepuasan/') ?>" style="color:#1F1F1F; text-decoration: underline;">Isi Survey</a>
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                            <tr>
-                                <td width="80%">Isi Survey "EVALUASI KEPENTINGAN MAHASISWA TERHADAP FASILITAS DAN DOSEN FAKULTAS TEKNIK"</td>
-                                <?php if ($cek = $this->session->userdata('user_id')) { ?>
-                                    <!-- <td style="text-align: right; color:#1F1F1F">
-                                        <p href="" style="color:#1F1F1F; text-decoration: underline;">Selesai</p>
-                                    </td> -->
-                                    <td style="text-align: right; color:#1F1F1F">
-                                        <a href="<?php echo site_url('mahasiswa/kuisioner/kuisioner_kepentingan/') ?>" style="color:#1F1F1F; text-decoration: underline;">Isi Survey</a>
-                                    </td>
-                                <?php } else { ?>
-                                    <td style="text-align: right; color:#1F1F1F">
-                                        <a href="<?php echo site_url('mahasiswa/kuisioner/kuisioner_kepentingan/') ?>" style="color:#1F1F1F; text-decoration: underline;">Isi Survey</a>
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        </table>
+
+                        <div class="div-content2 div">
+                            <h4>Isi Survey "EVALUASI KEPENTINGAN MAHASISWA TERHADAP FASILITAS DAN DOSEN FAKULTAS TEKNIK"</h4>
+                            <?php if (
+                                $cek[0]->result_2 == 1
+                            ) { ?>
+                                <a class="disable">Selesai</a>
+                            <?php } else { ?>
+                                <a href="<?php echo site_url('mahasiswa/kuisioner/kuisioner_kepentingan/') ?>">Isi Survey</a>
+                            <?php } ?>
+                        </div>
                     </div>
                 </section>
             </div>

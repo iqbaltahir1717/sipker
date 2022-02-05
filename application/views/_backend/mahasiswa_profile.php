@@ -9,23 +9,16 @@
     .main-footer {
         margin-left: 0;
     }
+
+    body {
+        background: #ecf0f5;
+    }
 </style>
-<div class="content-wrapper">
+<div class="content-wrapper" style="padding: 30px;">
     <section class="content-header">
         <h1>
             <?php echo strtoupper($title); ?>
         </h1>
-        <ol class="breadcrumb">
-            <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
-            <?php
-            if ($this->uri->segment(3)) {
-                echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
-                echo '<li class="active">' . strtoupper($this->uri->segment(3)) . '</li>';
-            } else {
-                echo '<li class="active">' . strtoupper($title) . '</li>';
-            }
-            ?>
-        </ol>
     </section>
 
     <section class="content">
@@ -84,7 +77,7 @@
                                 echo $this->session->flashdata('alert');
                             }
                             ?>
-                            <?php echo form_open_multipart("admin/profile/update", 'class="form-horizontal"') ?>
+                            <?php echo form_open_multipart("mahasiswa/kuisioner/mahasiswa_update", 'class="form-horizontal"') ?>
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">Nama User</label>
                                 <div class="col-sm-10">

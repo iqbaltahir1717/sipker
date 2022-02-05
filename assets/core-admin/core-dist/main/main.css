@@ -107,6 +107,60 @@ body {
   border-radius: 4px;
 }
 
+.div {
+  border-radius: 20px;
+  padding: 30px 50px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.div h4 {
+  font-weight: 900;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.div a {
+  background-color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.div .disable {
+  background: #5a5a5a !important;
+  color: #fff;
+  cursor: pointer;
+}
+
+.div-content {
+  background: linear-gradient(110.05deg, #53EAFF 4.37%, #2BB3FF 103.97%);
+}
+
+.div-content a:hover {
+  background: linear-gradient(110.05deg, #53EAFF 4.37%, #2BB3FF 103.97%);
+  color: #000;
+}
+
+.div-content .disable {
+  background: #5a5a5a;
+}
+
+.div-content2 {
+  background: linear-gradient(110.05deg, #FFCF53 4.37%, #FF6B2B 103.97%);
+}
+
+.div-content2 a:hover {
+  color: #000;
+  background: linear-gradient(110.05deg, #FFCF53 4.37%, #FF6B2B 103.97%);
+}
+
+.div-content2 .disable {
+  background: #5a5a5a;
+}
+
 .img-hero {
   width: 40em;
   position: relative;
@@ -114,7 +168,7 @@ body {
 
 .hero1 h4 {
   color: #8D8D8D;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .hero1 h1 {

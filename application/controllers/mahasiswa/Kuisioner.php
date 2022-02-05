@@ -37,10 +37,13 @@ class Kuisioner extends CI_Controller
         $data['total_data'] = $totalRows;
 
         //DATA
+        $id = $this->session->userdata('user_id');
         $data['setting'] = getSetting();
         $data['title']   = 'Halaman Kuisioner';
-        $data['cek']   = $this->m_kuisioner->read($perPage, $page, '');
+        $data['cek']  = $this->m_kuisioner->cek($id);
+        // echo "<pre>";
         // print_r($data['cek']);
+        // echo "</pre>";
         // die;
         // $data['result']   = $this->m_result->read($perPage, $page, '');
         // TEMPLATE
@@ -140,6 +143,9 @@ class Kuisioner extends CI_Controller
             $data4['id_kuisioner']   = $this->input->post('id_kuisioner5')[$q];
             $this->m_kuisioner->create_kuisioner($data4);
         }
+        $datax['user_id']  = $this->session->userdata('user_id');
+        $datax['result_1']  = 1;
+        $this->m_kuisioner->update_result($datax);
 
         // ALERT
         $alertStatus  = "success";
@@ -205,6 +211,10 @@ class Kuisioner extends CI_Controller
             $this->m_kuisioner2->create_kuisioner($data4);
         }
 
+        $datax['user_id']  = $this->session->userdata('user_id');
+        $datax['result_2']  = 1;
+        $this->m_kuisioner->update_result($datax);
+
         // ALERT
         $alertStatus  = "success";
         $alertMessage = "Berhasil Mengisi Kuisioner Kepentingan";
@@ -242,7 +252,7 @@ class Kuisioner extends CI_Controller
                         $alertStatus  = "failed";
                         $alertMessage = "Password baru tidak boleh bernilai kosong";
                         getAlert($alertStatus, $alertMessage);
-                        redirect('admin/profile');
+                        redirect('mahasiswa/kuisioner/profile');
                         // clean_all_processes();
                     }
                 } else {
@@ -251,7 +261,7 @@ class Kuisioner extends CI_Controller
                     $alertStatus  = "failed";
                     $alertMessage = "Password baru dan konfirmasi tidak cocok";
                     getAlert($alertStatus, $alertMessage);
-                    redirect('admin/profile');
+                    redirect('mahasiswa/kuisioner/profile');
                     // clean_all_processes();
                 }
             } else {
@@ -260,7 +270,7 @@ class Kuisioner extends CI_Controller
                 $alertStatus  = "failed";
                 $alertMessage = "Password Lama Tidak Sama dengan database";
                 getAlert($alertStatus, $alertMessage);
-                redirect('admin/profile');
+                redirect('mahasiswa/kuisioner/profile');
                 // clean_all_processes();
             }
         }
@@ -322,6 +332,6 @@ class Kuisioner extends CI_Controller
         $alertMessage = "Berhasil mengubah data profile : " . $data['user_name'];
         getAlert($alertStatus, $alertMessage);
 
-        redirect('admin/profile');
+        redirect('mahasiswa/kuisioner/profile');
     }
 }

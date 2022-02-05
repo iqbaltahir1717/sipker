@@ -42,10 +42,27 @@
         <div class="box">
             <div class="box-header with-border">
                 <div class="box-tools pull-left">
-                    <h4><b>Nilai Kepuasan Pengguna</b></h4>
+                    <h4><b>Grafik Pengisi Kuisioner</b></h4>
                 </div>
             </div>
             <div class="box-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h4>1. Hasil Kepuasan</h4>
+                        <hr>
+                        <canvas id="chart1" width="30" height="20"></canvas>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>2. Hasil Kepentingan</h4>
+                        <hr>
+                        <canvas id="chart2" width="30" height="20"></canvas>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>3. Hasil Serqual Score</h4>
+                        <hr>
+                        <canvas id="chart3" width="30" height="20"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -585,7 +602,7 @@
                     <!-- 2 -->
                     <div class="col-lg-6 col-sm-12">
                         <div class="box-body">
-                            <h4>2. Servqual Score Dimensi Reliability</h4>
+                            <h4>2. Serqual Score Dimensi Reliability</h4>
                             <table class="table table-bordered">
                                 <tr style="background-color: gray;color:white">
                                     <th style="width: 60px">Kode</th>
@@ -831,3 +848,110 @@
         </div>
     </section>
 </div>
+
+
+<script>
+    const ct1 = document.getElementById('chart1');
+    const chart1 = new Chart(ct1, {
+        type: 'pie',
+        data: {
+            labels: ['Tangible', 'Realibility', 'Responsivness', 'Assurance', 'Empathy'],
+            datasets: [{
+                label: '',
+                data: [<?php echo $ar_tang ?>, <?php echo $ar_reab ?>, <?php echo $ar_resp ?>, <?php echo $ar_assr ?>, <?php echo $ar_empt ?>],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    const ct2 = document.getElementById('chart2');
+    const chart2 = new Chart(ct2, {
+        type: 'pie',
+        data: {
+            labels: ['Tangible', 'Realibility', 'Responsivness', 'Assurance', 'Empathy'],
+            datasets: [{
+                label: '',
+                data: [<?php echo $ar_tang1 ?>, <?php echo $ar_reab1 ?>, <?php echo $ar_resp1 ?>, <?php echo $ar_assr1 ?>, <?php echo $ar_empt1 ?>],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    const ct3 = document.getElementById('chart3');
+    const chart3 = new Chart(ct3, {
+        type: 'pie',
+        data: {
+            labels: ['Tangible', 'Realibility', 'Responsivness', 'Assurance', 'Empathy'],
+            datasets: [{
+                label: '',
+                data: [<?php echo $sr_tang1 ?>, <?php echo $sr_real1 ?>, <?php echo $sr_resp1 ?>, <?php echo $sr_assr1 ?>, <?php echo $sr_empt1 ?>],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

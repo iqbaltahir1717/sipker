@@ -152,15 +152,6 @@ class Result extends CI_Controller
 
 
         //serqual score tangible
-        // echo '<pre>';
-        // print_r($this->m_result->method_ipa(1));
-        // echo '</pre>';
-
-        // echo '<pre>';
-        // print_r($this->m_result->method_ipa2(1));
-        // echo '</pre>';
-
-        // die;
         $s = $this->m_result->method_ipa(1);
         $k = $this->m_result->method_ipa2(1);
         for ($i = 0; $i < count($s); $i++) {
@@ -173,28 +164,20 @@ class Result extends CI_Controller
             $data["serqual"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase, 2)];
             $data["average_r"][] = $persentase;
         }
-        // foreach ($this->m_result->method_ipa(1) as $s) {
-        //     $x = ((1 * $s->total_stp + (2 * $s->total_tp) + (3 * $s->total_c) + (4 * $s->total_p) + (5 * $s->total_sp)) / $total);
-        //     foreach ($this->m_result->method_ipa2(1) as $k) {
-        //         $y = ((1 * $k->total_stp + (2 * $k->total_tp) + (3 * $k->total_c) + (4 * $k->total_p) + (5 * $k->total_sp)) / $total);
-        //         $gap = $x - $y;
-        //         $persentase = ($x / $y) * 100;
-        //     }
-        //     $data["serqual"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase, 2)];
-        //     $data["average_r"][] = $persentase;
-        // }
         $b = ($data["average_r"]);
         $sr_tang1 = round(array_sum($b) / count($b), 2);
         $data["sr_tang1"] = strval($sr_tang1);
 
         //serqual score realibilty
-        foreach ($this->m_result->method_ipa(2) as $s) {
-            $x = ((1 * $s->total_stp + (2 * $s->total_tp) + (3 * $s->total_c) + (4 * $s->total_p) + (5 * $s->total_sp)) / $total);
-            foreach ($this->m_result->method_ipa2(2) as $k) {
-                $y = ((1 * $k->total_stp + (2 * $k->total_tp) + (3 * $k->total_c) + (4 * $k->total_p) + (5 * $k->total_sp)) / $total);
-                $gap = $x - $y;
-                $persentase = ($x / $y) * 100;
-            }
+        $s2 = $this->m_result->method_ipa(2);
+        $k2 = $this->m_result->method_ipa2(2);
+        for ($i = 0; $i < count($s2); $i++) {
+            $x = ((1 * $s2[$i]->total_stp + (2 * $s2[$i]->total_tp) + (3 * $s2[$i]->total_c) + (4 * $s2[$i]->total_p) + (5 * $s2[$i]->total_sp)) / $total);
+
+            $y = ((1 * $k2[$i]->total_stp + (2 * $k2[$i]->total_tp) + (3 * $k2[$i]->total_c) + (4 * $k2[$i]->total_p) + (5 * $k2[$i]->total_sp)) / $total);
+            $gap = $x - $y;
+            $persentase = ($x / $y) * 100;
+
             $data["serqual2"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase, 2)];
             $data["average_r2"][] = $persentase;
         }
@@ -203,14 +186,16 @@ class Result extends CI_Controller
         $data["sr_real1"] = strval($sr_real1);
 
         //serqual score resp
-        foreach ($this->m_result->method_ipa(3) as $s) {
-            $x = ((1 * $s->total_stp + (2 * $s->total_tp) + (3 * $s->total_c) + (4 * $s->total_p) + (5 * $s->total_sp)) / $total);
-            foreach ($this->m_result->method_ipa2(3) as $k) {
-                $y = ((1 * $k->total_stp + (2 * $k->total_tp) + (3 * $k->total_c) + (4 * $k->total_p) + (5 * $k->total_sp)) / $total);
-                $gap = $x - $y;
-                $persentase = ($x / $y) * 100;
-            }
-            $data["serqual3"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase)];
+        $s3 = $this->m_result->method_ipa(3);
+        $k3 = $this->m_result->method_ipa2(3);
+        for ($i = 0; $i < count($s3); $i++) {
+            $x = ((1 * $s3[$i]->total_stp + (2 * $s3[$i]->total_tp) + (3 * $s3[$i]->total_c) + (4 * $s3[$i]->total_p) + (5 * $s3[$i]->total_sp)) / $total);
+
+            $y = ((1 * $k3[$i]->total_stp + (2 * $k3[$i]->total_tp) + (3 * $k3[$i]->total_c) + (4 * $k3[$i]->total_p) + (5 * $k3[$i]->total_sp)) / $total);
+            $gap = $x - $y;
+            $persentase = ($x / $y) * 100;
+
+            $data["serqual3"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase, 2)];
             $data["average_r3"][] = $persentase;
         }
         $b3 = ($data["average_r3"]);
@@ -218,14 +203,16 @@ class Result extends CI_Controller
         $data["sr_resp1"] = strval($sr_resp1);
 
         //serqual score assr
-        foreach ($this->m_result->method_ipa(4) as $s) {
-            $x = ((1 * $s->total_stp + (2 * $s->total_tp) + (3 * $s->total_c) + (4 * $s->total_p) + (5 * $s->total_sp)) / $total);
-            foreach ($this->m_result->method_ipa2(4) as $k) {
-                $y = ((1 * $k->total_stp + (2 * $k->total_tp) + (3 * $k->total_c) + (4 * $k->total_p) + (5 * $k->total_sp)) / $total);
-                $gap = $x - $y;
-                $persentase = ($x / $y) * 100;
-            }
-            $data["serqual4"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase)];
+        $s4 = $this->m_result->method_ipa(4);
+        $k4 = $this->m_result->method_ipa2(4);
+        for ($i = 0; $i < count($s4); $i++) {
+            $x = ((1 * $s4[$i]->total_stp + (2 * $s4[$i]->total_tp) + (3 * $s4[$i]->total_c) + (4 * $s4[$i]->total_p) + (5 * $s4[$i]->total_sp)) / $total);
+
+            $y = ((1 * $k4[$i]->total_stp + (2 * $k4[$i]->total_tp) + (3 * $k4[$i]->total_c) + (4 * $k4[$i]->total_p) + (5 * $k4[$i]->total_sp)) / $total);
+            $gap = $x - $y;
+            $persentase = ($x / $y) * 100;
+
+            $data["serqual4"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase, 2)];
             $data["average_r4"][] = $persentase;
         }
         $b4 = ($data["average_r4"]);
@@ -233,19 +220,17 @@ class Result extends CI_Controller
         $data["sr_assr1"] = strval($sr_assr1);
 
         //serqual score empt
-        foreach ($this->m_result->method_ipa(5) as $s) {
-            $x = ((1 * $s->total_stp + (2 * $s->total_tp) + (3 * $s->total_c) + (4 * $s->total_p) + (5 * $s->total_sp)) / $total);
-            foreach ($this->m_result->method_ipa2(5) as $k) {
-                $y = ((1 * $k->total_stp + (2 * $k->total_tp) + (3 * $k->total_c) + (4 * $k->total_p) + (5 * $k->total_sp)) / $total);
-                $gap = $x - $y;
-                $persentase = ($x / $y) * 100;
-            }
-            $data["serqual5"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase)];
+        $s5 = $this->m_result->method_ipa(5);
+        $k5 = $this->m_result->method_ipa2(5);
+        for ($i = 0; $i < count($s5); $i++) {
+            $x = ((1 * $s5[$i]->total_stp + (2 * $s5[$i]->total_tp) + (3 * $s5[$i]->total_c) + (4 * $s5[$i]->total_p) + (5 * $s5[$i]->total_sp)) / $total);
+
+            $y = ((1 * $k5[$i]->total_stp + (2 * $k5[$i]->total_tp) + (3 * $k5[$i]->total_c) + (4 * $k5[$i]->total_p) + (5 * $k5[$i]->total_sp)) / $total);
+            $gap = $x - $y;
+            $persentase = ($x / $y) * 100;
+
+            $data["serqual5"][] = [round($x, 2), round($y, 2), round($gap, 2), round($persentase, 2)];
             $data["average_r5"][] = $persentase;
-            // echo "<pre>";
-            // print_r($data["serqual5"]);
-            // echo "</pre>";
-            // die;
         }
         $b5 = ($data["average_r5"]);
         $sr_empt1 = round(array_sum($b5) / count($b5), 2);

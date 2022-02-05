@@ -1,7 +1,13 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1 class="fontPoppins">
-            Hi, Serah Christine <br>
+            Hi, <?php
+                if (strlen($this->session->userdata('user_fullname')) > 15) {
+                    echo  substr($this->session->userdata('user_fullname'), 0, 15);
+                } else {
+                    echo $this->session->userdata('user_fullname');
+                }
+                ?><br>
             Selamat Datang 👋
         </h1>
         <ol class="breadcrumb">
@@ -17,13 +23,13 @@
                         <!-- small box -->
                         <div class="small-box bg-primary">
                             <div class="inner">
-                                <h3>2</h3>
+                                <h3><?php echo $widget_kuisioner; ?></h3>
                                 <p>Total Kuisioner</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-gavel"></i>
                             </div>
-                            <a href="<?php echo site_url('admin/regulation'); ?>" class="small-box-footer">
+                            <a href="<?php echo site_url('admin/kuisioner'); ?>" class="small-box-footer">
                                 More info <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
@@ -32,13 +38,13 @@
                         <!-- small box -->
                         <div class="small-box bg-primary">
                             <div class="inner">
-                                <h3>323</h3>
+                                <h3><?php echo $widget_answer; ?></h3>
                                 <p>Total Mahasiswa Mengisi Kuisioner</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-gavel"></i>
                             </div>
-                            <a href="<?php echo site_url('admin/regulation'); ?>" class="small-box-footer">
+                            <a href="<?php echo site_url('admin/answer'); ?>" class="small-box-footer">
                                 More info <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
@@ -47,13 +53,13 @@
                         <!-- small box -->
                         <div class="small-box bg-primary">
                             <div class="inner">
-                                <h3>120</h3>
+                                <h3><?php echo $widget_user; ?></h3>
                                 <p>Total Mahasiswa Terdaftar</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-gavel"></i>
                             </div>
-                            <a href="<?php echo site_url('admin/regulation'); ?>" class="small-box-footer">
+                            <a href="<?php echo site_url('admin/user'); ?>" class="small-box-footer">
                                 More info <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>

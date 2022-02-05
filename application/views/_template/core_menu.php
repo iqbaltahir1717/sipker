@@ -98,12 +98,13 @@
                             <li class="header">Main Tools</li>
                             <li class="active"><a href="<?php echo site_url('admin/dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                             <li class=""><a href="<?php echo site_url('admin/kuisioner') ?>"><i class="fa fa-circle-o"></i> <span>Buat Kuisioner</span></a></li>
+                            <li class=""><a href="<?php echo site_url('admin/answer/') ?>"><i class="fa fa-list"></i> <span>Jawaban Kuisioner</span></a></li>
                             <li class=""><a href="<?php echo site_url('admin/result/') ?>"><i class="fa fa-list"></i> <span>Hasil Kuisioner</span></a></li>
                             <li class="header">System Setting</li>
                             <li><a href="<?php echo site_url('admin/group'); ?>"><i class="fa fa-circle-o"></i> Group</a></li>
                             <li><a href="<?php echo site_url('admin/user'); ?>"><i class="fa fa-circle-o"></i> User</a></li>
                             <li><a href="<?php echo site_url('admin/setting'); ?>"><i class="fa fa-circle-o"></i> Sistem</a></li>
-                            <li><a href="<?php echo site_url('admin/about'); ?>"><i class="fa fa-circle-o"></i> Tentang Aplikasi</a></li>
+                            <li><a href="<?php echo site_url('about'); ?>"><i class="fa fa-circle-o"></i> Tentang Aplikasi</a></li>
                         </ul>
 
                     <?php } elseif ($this->session->userdata('user_group') == 2) { ?>
